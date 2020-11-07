@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+	<script type="text/javascript" src="script.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Formularios y Carga de Datos</title>
+</head>
+<body>
+
+	<h1>Etiquetas de Formularios y Carga de Datos</h1>
+
+	<section>
+		
+		<article>
+			
+			<div style="margin-top: 83.8px" class="main1">
+
+				<p>
+				
+					<code>&lt;form&gt;</code><br> Se utiliza para iniciar un contenedor para varios tipos de metodos de entrada.<br><br>
+
+					<code>&lt;input&gt;</code><br> Es el tipo de formulario mas usado, mostrandose de maneras distintas segun el atributo <code>type</code>.<br>
+					Por ejemplo <code>&lt;input type:"text"&gt;</code> crea un campo de una sola linea para introducir texto.
+
+				</p>
+
+				<form style="font-size: 16px">
+					<label for="nombre">Nombre</label><br>
+					<input type="text" name="nombre" id="nombre"><br>
+					<label for="apellido">Apellido</label><br>
+					<input type="text" name="apellido" id="apellido"><br>
+				</form>
+
+				<p>
+					
+					<code>&lt;label&gt;</code><br> Sirve para etiquetar e identificar varios tipos de elementos. Como en el ejemplo anterior. "Nombre" y "Apellido"<br><br>
+
+					<code>&lt;input type:"radio"&gt;</code> Crea un tipo de seleccion en el cual el usuario solo puede elegir una de las opciones.
+
+				</p>
+
+				<form>
+					
+					<input type="radio" name="genero" id="masculino" value="masculino">
+					<label for="masculino">Masculino</label><br>
+					<input type="radio" name="genero" id="femenino" value="femenino">
+					<label for="femenino">Femenino</label><br>
+					<input type="radio" name="genero" id="otro" value="otro">
+					<label for="otro">Otro</label><br>
+
+				</form>
+
+				<p>
+					
+					<code>&lt;input type:"checkbox"&gt;</code> Define una seleccion de tipo casillas, en las cuales el usuario puede elegir desde varias a ninguna.
+
+				</p>
+
+				<form>
+					
+					<input type="checkbox" name="vehiculo1" id="vehiculo1" value="coche">
+					<label for="vehiculo1">Coche</label><br>
+					<input type="checkbox" name="vehiculo1" id="vehiculo2" value="bici">
+					<label for="vehiculo2">Bici</label><br>
+					<input type="checkbox" name="vehiculo3" id="vehiculo3" value="barco">
+					<label for="vehiculo3">Barco</label><br>
+
+				</form>
+
+				<p>
+					
+					<code>&lt;input type:"submit"&gt;</code><br> Crea un boton para enviar y procesar lo que el usuario introdujo previamente en otra area.<br><br>
+
+				</p>
+
+				<form style="font-size: 16px";>
+					
+					<label for="fname">Nombre</label><br>
+					<input type="text" name="fname" id="fname" value="Carlos"><br><br>
+					<label for="lname">Apellido</label><br>
+					<input type="text" name="lname" id="lname" value="López"><br>
+					<input onclick="responder()" type="submit" name="Enviar" value="Enviar">
+
+				</form>
+
+				<p>
+					
+					<code>&lt;select&gt;</code><br> Define un menú desplegable.<br><br>
+					<code>&lt;option&gt;</code><br> Define opciones para el menú desplegable.<br><br>
+					<code>&lt;optgroup&gt;</code><br> Define un grupo de opciones relacionadas.
+
+				</p>
+
+				<label style="font-size: 16px" for="car">Eligue un coche:</label>
+				<select id="car" name="car" size="1">
+					
+					<option value="volvo">Volvo</option>
+					<option value="Saab">Saab</option>
+					<option value="fiat">Fiat</option>
+					<option value="Audi">Audi</option>
+
+				</select>
+
+				<p>
+					
+					<code>&lt;textarea&gt;</code><br> Define un campo de texto de multiples lineas.
+
+				</p>
+
+				<textarea title="mensaje" rows="5" cols="10">
+					Campo de Texto.
+				</textarea>
+
+				<p>
+					
+					<code>&lt;button&gt;</code><br> Define un botón.
+
+				</p>
+
+				<button type="button" onclick="alert('Hola Mundo!')" )>Haz Clic!</button>
+
+				<p>
+					
+					<code>&lt;fieldset&gt;</code><br> Define un grupo de datos relacionados.<br>
+					<code>&lt;legend&gt;</code><br> Define un titulo para el grupo de <code>&lt;fieldset&gt;</code><br>
+
+				</p>
+
+				<form>
+ 					<fieldset>
+   					<legend>Datos Personales:</legend>
+  				  <label for="nombre">Nombre:</label><br>
+  				  <input type="text" id="nombre2" name="nombre" value="Carlos"><br>
+  				  <label for="apellido">Last name:</label><br>
+  				  <input type="text" id="apellido2" name="apellido" value="López"><br><br>
+ 					  <button type="button" onclick="alert('Datos Procesados: '+nombre2.value+' '+apellido2.value)" >Enviar</button>
+ 				 </fieldset>
+				</form>
+
+				<p>
+					
+					<code>&lt;datalist&gt;</code><br> Define una lista con opciones predefinidas para otros elementos <code>&lt;input&gt;</code><br> 
+
+				</p>
+
+				<form>
+					<label for="navegadores">Elija un navegador:</label>
+  				<input list="navegadores">
+  				<datalist id="navegadores">
+    				<option value="Internet Explorer">
+    				<option value="Firefox">
+    				<option value="Chrome">
+    				<option value="Opera">
+    				<option value="Safari">
+  				</datalist>
+				</form>
+
+				<p>
+					
+					<code>&lt;output&gt;</code><br> Representa el resultado de algun calculo, como puede ser el de un script.
+
+				</p>
+
+				<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+  				0
+ 					<input type="range"  id="a" name="a" value="50">
+ 					100 +
+  				<input type="number" id="b" name="b" value="50">
+  				=
+  				<output name="x" for="a b"></output>
+  				<br><br>
+				</form>
+
+			</div>
+
+		</article>
+
+		<aside>
+
+    	<a href="index.html"><b>Volver al Índice</b></a><br><br> 
+
+      <h3>Etiquetas de:</h3>
+      
+      <nav>
+
+      	<a href="texto.html"><b>Texto</b><br>
+        <a href="EUF.html"><b>Encabezados, Ubicación y Formato</b></a><br>
+        <a href="tablas.html"> <b>Tablas</b></a><br>
+        <a href="NV.html"> <b>Numeración y Viñetas</b></a><br>
+        <b>Formularios y Carga de datos</b></a><br>
+
+      </nav>
+
+    </aside>    
+
+	</section>
+
+	<footer style="margin-top: 20px">Hecho por: <strong><abr title="Pokeleaf">Carlos López</abr></strong></footer>
+
+</body>
+</html>
